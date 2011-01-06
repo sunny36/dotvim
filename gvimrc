@@ -2,7 +2,9 @@
 if has("gui_macvim")
 
   set fuoptions=maxvert,maxhorz " fullscreen options (MacVim only), resized window when changed to fullscreen
-  set guifont=Monaco:h13
+  set guifont=Monaco:h12
+  set background=dark 
+  colorscheme zenburn
   set guioptions-=T  " remove toolbar
   set stal=2 " turn on tabs by default
   set guioptions-=r
@@ -12,6 +14,11 @@ elseif has("gui_gtk2")
 
 elseif has("x11")
 elseif has("gui_win32")
+end
+
+if has("gui_macvim")
+  macmenu &File.New\ Tab key=<nop>
+  map <D-t> <Plug>PeepOpen
 end
 
 " General *********************************************************************
