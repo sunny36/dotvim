@@ -1,10 +1,10 @@
 " OS Specific *****************************************************************
+"
 if has("gui_macvim")
 
   set fuoptions=maxvert,maxhorz " fullscreen options (MacVim only), resized window when changed to fullscreen
   set guifont=Monaco:h12
   set background=dark 
-  colorscheme zenburn
   set guioptions-=T  " remove toolbar
   set stal=2 " turn on tabs by default
   set guioptions-=r
