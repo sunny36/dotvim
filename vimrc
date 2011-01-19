@@ -20,9 +20,6 @@ set backspace=indent,eol,start    " Intuitive backspacing.
 
 set hidden                        " Handle multiple buffers better.
 
-set wildmenu                      " Enhanced command line completion.
-set wildmode=list:longest         " Complete files like a shell.
-
 set ignorecase                    " Case-insensitive searching.
 set smartcase                     " But case-sensitive if expression contains a capital letter.
 
@@ -39,15 +36,18 @@ set title                         " Set the terminal's title
 
 set visualbell                    " No beeping.
 
-"set nobackup                      " Don't make a backup before overwriting a file.
-"set nowritebackup                 " And again.
-"set directory=$HOME/.vim/tmp//,.  " Keep swap files in one location
+"Directories *****************************************************************
+"Setup backup location and enable
+set backupdir=~/backup/vim
+set backup
+
+"Set Swap directory
+set directory=~/backup/vim/swap
 
 set laststatus=2                  " Show the status line all the time
 " Useful status information at bottom of screen
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
 
-" Or use vividchalk
 colorscheme ir_black
 
 " Tab mappings.
@@ -76,6 +76,17 @@ map <Leader>b :FufBuffer<CR>
 let g:fuzzy_ignore = '.o;.obj;.bak;.exe;.pyc;.pyo;.DS_Store;.db'
 
 map <Leader>p <C-^> " Go to previous file
+
+" Omni Completion *************************************************************
+autocmd FileType html :set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
+autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+autocmd FileType c set omnifunc=ccomplete#Complete
+" May require ruby compiled in
+autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete 
 
 " Controversial...swap colon and semicolon for easier commands
 "nnoremap ; :

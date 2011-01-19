@@ -7,7 +7,7 @@ if has("gui_macvim")
   set background=dark 
   set guioptions-=T  " remove toolbar
   set stal=2 " turn on tabs by default
-  set guioptions-=r
+  "set guioptions-=r
 elseif has("gui_gtk2")
 
   set guioptions-=T  " remove toolbar
@@ -27,8 +27,8 @@ set encoding=utf8
 "set transparency=0
 
 " Default size of window
-set columns=179 
-set lines=50
+"set columns=179 
+"set lines=50
 
 " Tab headings 
 set gtl=%t gtt=%F
