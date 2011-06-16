@@ -155,3 +155,10 @@ set splitbelow splitright
 :noremap <Leader>v :vsp^M^W^W<cr>
 :noremap <Leader>h :split^M^W^W<cr>
 
+
+" Highlight lines with length > 120 characters
+if exists('+colorcolumn')
+  set colorcolumn=120
+else
+  au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>120v.\+', -1)
+endif
