@@ -55,3 +55,6 @@
 [submodule "bundle/indent-guides"]
 	path = bundle/indent-guides
 	url = https://github.com/nathanaelkane/vim-indent-guides.git
+[submodule "bundle/rvm"]
+	path = bundle/rvm
+	url = https://github.com/csexton/rvm.vim.git
