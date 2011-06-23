@@ -4,7 +4,8 @@
 set nocompatible                  " Must come first because it changes other options.
 let mapleader = ","
 " Professor VIM says '87% of users prefer jj over esc', jj abrams disagrees
-imap jj <Esc> 
+imap jk <Esc> 
+imap kj <Esc> 
 
 silent! call pathogen#runtime_append_all_bundles()
 
@@ -48,6 +49,7 @@ set laststatus=2                  " Show the status line all the time
 " Useful status information at bottom of screen
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
 
+set background=dark
 colorscheme ir_black
 
 " Tab mappings.
